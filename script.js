@@ -1,10 +1,11 @@
 // 1. Implement the getGreeting function.
 
 function getGreeting(firstName, lastName) {
-    console.log('Hi, ' + firstName + ' ' + lastName + '. What is up?')
+    return 'Hi, ' + firstName + ' ' + lastName + '. What is up?';
 }
 
-getGreeting('John', 'Smith');
+const greeting = getGreeting('John', 'Smith');
+console.log(greeting);
 
 // 2. Implement the isThisMyName function that returns true if provided with your name.
 // Otherwise, return false.
