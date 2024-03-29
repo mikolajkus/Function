@@ -146,4 +146,3 @@ function charactersRemover(string) {
 }
 
 charactersRemover("precisely");
-
