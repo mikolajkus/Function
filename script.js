@@ -1,7 +1,7 @@
 // 1. Implement the getGreeting function.
 
 function getGreeting(firstName, lastName) {
-    return 'Hi, ' + firstName + ' ' + lastName + '. What is up?';
+    return 'Hi, "' + firstName + ' ' + lastName + '". What is up?';
 }
 
 const greeting = getGreeting('John', 'Smith');
@@ -11,28 +11,20 @@ console.log(greeting);
 // Otherwise, return false.
 
 function isThisMyName(myName) {
-    if (myName === 'Mikolaj') {
-        console.log('true');
-    } else {
-        console.log('false');
-    }
+    return myName === 'Mikolaj'
 }
 
-isThisMyName('Mikolaj');
+console.log(isThisMyName('Mikolaj'));
 
 // 3. Implement the isThisBoolean  function that returns true  if provided with a boolean.
 
-function isThisBoolean(boolean) {
-    if (boolean === true || boolean === false) {
-        console.log('true');
-    } else {
-        console.log('false');
-    }
+function isThisBoolean(value) {
+    return typeof value === 'boolean';
 }
 
-isThisBoolean(true);  //true
-isThisBoolean(false);  // true
-isThisBoolean('true'); // false
+console.log(isThisBoolean(true));  //true
+console.log(isThisBoolean(false));  // true
+console.log(isThisBoolean('true')); // false
 
 // 4.Implement the getCircleArea  function.
 
@@ -46,8 +38,10 @@ console.log(area); // 78.53981633974483
 
 // 4.5. Implement the getCirclesAreaSum function that uses the getCircleArea function under the hood
 
-function getCirclesAreaSum(radiusFirst, radiusSecond) {
-    return  (Math.PI * radiusFirst * radiusFirst) + (Math.PI * radiusSecond * radiusSecond);
+function getCirclesAreaSum(firstRadius, secondRadius) {
+    const firstCircleArea = Math.PI * firstRadius * firstRadius;
+    const secondCircleArea = Math.PI * secondRadius * secondRadius;
+    return firstCircleArea + secondCircleArea;
 }
 
 const circlesAreaSum = getCirclesAreaSum(5, 10);
@@ -56,10 +50,10 @@ console.log(circlesAreaSum); // 392.69908169872417
 // 4.75 Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
 
 function isQuarter(monthNumber) {
-    console.log(Math.ceil(monthNumber / 3));
+    return Math.ceil(monthNumber / 3);
 }
 
-isQuarter(12);
+console.log(isQuarter(12));
 
 // 5. Write the convertMinutesToHours function.
 
@@ -73,76 +67,67 @@ console.log(hours); // 1.25
 // 6. Write the isTextUppercase  function.
 
 function isTextUppercase(text) {
-    if (text === text.toUpperCase()) {
-        console.log(true);
-    } else {
-        console.log(false);
-    }
+    return text === text.toUpperCase();
 }
 
-isTextUppercase('Hello'); // false
-isTextUppercase('HELLO'); // true
+console.log(isTextUppercase('Hello')); // false
+console.log(isTextUppercase('HELLO')); // true
 
 // 7. Create a function that checks if a number n is divisible by two numbers x AND y.
 // All inputs are positive, non-zero numbers.
 
 function isDivisibleByTwoNumbers(nNumber, xNumber, yNumber) {
     if (nNumber % xNumber === 0 && nNumber % yNumber === 0) {
-        console.log('true because ' + nNumber + ' is divisible by ' + xNumber + ' and ' + yNumber);
+        return 'true because ' + nNumber + ' is divisible by ' + xNumber + ' and ' + yNumber;
     } else if (nNumber % xNumber === 0 && nNumber % yNumber !== 0) {
-        console.log('false because ' + nNumber + ' is not divisible by ' + yNumber);
+        return 'false because ' + nNumber + ' is not divisible by ' + yNumber;
     } else if (nNumber % xNumber !== 0 && nNumber % yNumber === 0) {
-        console.log('false because ' + nNumber + ' is not divisible by ' + xNumber);
+        return 'false because ' + nNumber + ' is not divisible by ' + xNumber;
     } else {
-        console.log('false because ' + nNumber + ' is neither divisible by ' + xNumber + ' nor ' + yNumber);
+        return 'false because ' + nNumber + ' is neither divisible by ' + xNumber + ' nor ' + yNumber;
     }
 }
 
-isDivisibleByTwoNumbers(30,5,20);
+console.log(isDivisibleByTwoNumbers(30,5,20));
 
 //8. Write the getBillboardPrice function that accepts two arguments:
 // - the text intended to use on the billboard
 // - the cost of a single character
 
 function getBillboardPrice(text, costPerCharacter) {
-    const textLength = text.length;
-    const totalPrice = textLength * costPerCharacter;
-    console.log(totalPrice);
+    return text.length * costPerCharacter;
 }
 
-getBillboardPrice('Hello world!', 10); // 120
-getBillboardPrice('Hello world!', 15); // 180
-getBillboardPrice('To be, or not to be', 20); // 380
+console.log(getBillboardPrice('Hello world!', 10)); // 120
+console.log(getBillboardPrice('Hello world!', 15)); // 180
+console.log(getBillboardPrice('To be, or not to be', 20)); // 380
 
 // 9.Very simple, given a number (integer / decimal / both depending on the language), find its opposite (additive inverse).
 
 function additiveInverse(number) {
-    const currentNumber = number - number * 2;
-    console.log(currentNumber);
+    return number - number * 2;
 }
 
-additiveInverse(-0.75);
+console.log(additiveInverse(-0.75));
 
 // 10. In this simple assignment you are given a number and have to make it negative.
 // But maybe the number is already negative?
 
 function isNegative(number) {
     if (number >= 1) {
-        console.log(number - number * 2);
+        return number - number * 2;
     } else {
-        console.log(number);
+        return number;
     }
 }
-
-isNegative(-5);
+console.log(isNegative(5));
 
 // 11. It's pretty straightforward.
 // Your goal is to create a function that removes the first and last characters of a string.
 // You're given one parameter, the original string. You don't have to worry about strings with less than two characters.
 
 function charactersRemover(string) {
-    const letterRemover = string.slice(1,-1);
-    console.log(letterRemover);
+    return string.slice(1,-1);
 }
 
-charactersRemover("precisely");
+console.log(charactersRemover("precisely"));
