@@ -28,7 +28,7 @@ console.log(isThisBoolean('true')); // false
 
 // 4.Implement the getCircleArea  function.
 
-function getCircleArea(radiusNumber) {
+function getCircleArea(radius) {
     return Math.PI * radius * radius;
 }
 
