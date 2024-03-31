@@ -121,11 +121,11 @@ console.log(makeNegative(5));
 // Your goal is to create a function that removes the first and last characters of a string.
 // You're given one parameter, the original string. You don't have to worry about strings with less than two characters.
 
-function removeChar(word) {
+function removeCharacter(word) {
     return word.slice(1,-1);
 }
 
-console.log(removeChar("precisely"));
+console.log(removeCharacter("precisely"));
 
 // 12. Your task is to create a function that does four basic mathematical operations.
 // The function should take three arguments - operation(string/char), value1(number), value2(number).
