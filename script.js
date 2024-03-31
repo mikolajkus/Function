@@ -109,7 +109,7 @@ console.log(getOppositeNumber(-0.75));
 
 function makeNegative(number) {
     if (number > 0) {
-        return number - number * 2;
+        return number * -1;
     }
 }
 
