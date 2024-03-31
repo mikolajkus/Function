@@ -11,7 +11,7 @@ console.log(greeting);
 // Otherwise, return false.
 
 function isThisMyName(myName) {
-    return myName === 'Mikolaj'
+    return myName === 'Mikolaj';
 }
 
 console.log(isThisMyName('Mikolaj'));
@@ -98,20 +98,18 @@ console.log(getBillboardPrice('To be, or not to be', 20)); // 380
 
 // 9.Very simple, given a number (integer / decimal / both depending on the language), find its opposite (additive inverse).
 
-function opposite(number) {
-    return number - number * 2;
+function getOppositeNumber(number) {
+    return number * -1;
 }
 
-console.log(opposite(-0.75));
+console.log(getOppositeNumber(-0.75));
 
 // 10. In this simple assignment you are given a number and have to make it negative.
 // But maybe the number is already negative?
 
 function makeNegative(number) {
-    if (number >= 0) {
+    if (number > 0) {
         return number - number * 2;
-    } else {
-        return number;
     }
 }
 
@@ -121,55 +119,57 @@ console.log(makeNegative(5));
 // Your goal is to create a function that removes the first and last characters of a string.
 // You're given one parameter, the original string. You don't have to worry about strings with less than two characters.
 
-function removeCharacter(word) {
+function firstAndLastLetter(word) {
     return word.slice(1,-1);
 }
 
-console.log(removeCharacter("precisely"));
+console.log(firstAndLastLetter("precisely"));
 
 // 12. Your task is to create a function that does four basic mathematical operations.
 // The function should take three arguments - operation(string/char), value1(number), value2(number).
 // The function should return result of numbers after applying the chosen operation.
 
-function basicOp(operation, firstValue, secondValue) {
-    return eval(firstValue + operation + secondValue);
+function calculatedValue(operation, firstValue, secondValue) {
+    const result = firstValue + operation + secondValue;
+    if (operation === '+' || operation === '-' || operation === '*' || operation === '/') {
+        return result;
+    }
+    return null;
 }
 
-console.log(basicOp('*', 10, 2));
+console.log(calculatedValue('*', 10, 2));
 
 // 13. The first century spans from the year 1 up to and including the year 100,
 // the second century - from the year 101 up to and including the year 200, etc.
 // Task
 // Given a year, return the century it is in.
 
-function century(year) {
+function getCentury(year) {
     return Math.ceil(year / 100);
 }
 
-console.log(century(1758));
+console.log(getCentury(1758));
 
 // 14. Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 
-function evenOrOdd(number) {
+function isEvenOrOdd(number) {
     if (number % 2 === 0) {
         return 'Even';
-    } else  {
-        return 'Odd';
     }
+    return 'Odd';
 }
 
-console.log(evenOrOdd(53));
+console.log(isEvenOrOdd(53));
 
 // 15. Create a function which answers the question "Are you playing banjo?".
 // If your name starts with the letter "R" or lower case "r", you are playing banjo!
 
 function areYouPlayingBanjo(name) {
-    const letterReturn = name.charAt(0);
-    if (letterReturn === 'R' || letterReturn === 'r') {
+    const firstLetter = name.charAt(0);
+    if (firstLetter === 'R' || firstLetter === 'r') {
         return name + ' plays banjo!';
-    } else {
-        return name + ' does not play banjo!';
     }
+    return name + ' does not play banjo!';
 }
 
 console.log(areYouPlayingBanjo("Robert"));
@@ -189,9 +189,8 @@ function BMI(weight, height) {
         return 'Normal';
     } else if (bmiValue <= 30) {
         return 'Overweight';
-    } else {
-        return 'Obese';
     }
+    return 'Obese';
 }
 
 console.log(BMI(80, 1.80));
@@ -200,17 +199,17 @@ console.log(BMI(80, 1.80));
 // In case of a draw, return 0.
 
 function rockPaperScissors(firstPlayer, secondPlayer) {
-    if (firstPlayer === 'rock' && secondPlayer === 'scissors') {
+    if (
+        (firstPlayer === 'rock' && secondPlayer === 'scissors') ||
+        (firstPlayer === 'paper' && secondPlayer === 'rock') ||
+        (firstPlayer === 'scissors' && secondPlayer === 'paper')
+    ) {
         return 1;
-    } else if (firstPlayer === 'paper' && secondPlayer === 'rock') {
-        return 1;
-    } else if (firstPlayer === 'scissors' && secondPlayer === 'paper') {
-        return 1;
-    } else if (firstPlayer === 'rock' && secondPlayer === 'paper') {
-        return 2;
-    } else if (firstPlayer === 'scissors' && secondPlayer === 'rock') {
-        return 2;
-    } else if (firstPlayer === 'paper' && secondPlayer === 'scissors') {
+    } else if (
+        (firstPlayer === 'rock' && secondPlayer === 'paper') ||
+        (firstPlayer === 'scissors' && secondPlayer === 'rock') ||
+        (firstPlayer === 'paper' && secondPlayer === 'scissors')
+    ) {
         return 2;
     }
     return 0;
@@ -228,7 +227,7 @@ console.log(rockPaperScissors('rock', 'paper'));
 // if the calculation type is not recognized, return null
 
 function getCalculationResult(firstNumber, secondNumber, calculationType) {
-    const result = eval(firstNumber + calculationType + secondNumber);
+    const result = firstNumber + calculationType + secondNumber;
     if (calculationType === '+' || calculationType === '-' || calculationType === '*' || calculationType === '/') {
         return result;
     }
@@ -258,9 +257,8 @@ console.log(getPercentageValue(100, 10));
 function getGreaterNumber(firstNumber, secondNumber) {
     if (firstNumber > secondNumber) {
         return firstNumber;
-    } else {
-        return secondNumber;
     }
+    return secondNumber;
 }
 
 console.log(getGreaterNumber(2, 5));
@@ -308,9 +306,8 @@ console.log(isDivisibleBy(10, 3));
 function getSmallerNumber(firstNumber, secondNumber) {
     if (firstNumber < secondNumber) {
         return firstNumber;
-    } else {
-        return secondNumber;
     }
+    return secondNumber;
 }
 
 console.log(getSmallerNumber(2, 1));
@@ -343,7 +340,7 @@ console.log(getCelsiusConvertedToFahrenheit(36));
 // the function should return the number converted from Fahrenheit to Celsius
 
 function getFahrenheitConvertedCelsius (degreesFahrenheit) {
-    return ((degreesFahrenheit - 32) * 5) / 9;
+    return (degreesFahrenheit - 32) * 5 / 9;
 }
 
 console.log(getFahrenheitConvertedCelsius(96.8));
@@ -354,7 +351,10 @@ console.log(getFahrenheitConvertedCelsius(96.8));
 // the function should return true  if the number represents a leap year, and false otherwise
 
 function isLeapYear(year) {
-    return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+    const divisibleBy4 = year % 4 === 0;
+    const divisibleBy100 = year % 100 !== 0;
+    const divisibleBy400 = year % 400 === 0;
+    return divisibleBy4 && divisibleBy100 || divisibleBy400;
 }
 
 console.log(isLeapYear(2003));
@@ -367,7 +367,8 @@ console.log(isLeapYear(2003));
 // the function should return the average of all provided numbers
 
 function getAverageOfThreeNumbers (firstNumber, secondNumber, thirdNumber) {
-    return (firstNumber + secondNumber + thirdNumber) / 3;
+    const sum = firstNumber + secondNumber + thirdNumber;
+    return sum / 3;
 }
 
 console.log(getAverageOfThreeNumbers(3, 4, 4));
