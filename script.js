@@ -77,9 +77,9 @@ console.log(isTextUppercase('HELLO')); // true
 // All inputs are positive, non-zero numbers.
 
 function isDivisible(nNumber, xNumber, yNumber) {
-    const isFirstResult = nNumber % xNumber === 0;
-    const isSecondResult = nNumber % yNumber === 0;
-    return isFirstResult && isSecondResult;
+    const isDivisibleByX = nNumber % xNumber === 0;
+    const isDivisibleByY = nNumber % yNumber === 0;
+    return isDivisibleByX && isDivisibleByY;
 }
 
 console.log(isDivisible(3, 3, 4));
@@ -217,3 +217,168 @@ function rockPaperScissors(firstPlayer, secondPlayer) {
 }
 
 console.log(rockPaperScissors('rock', 'paper'));
+
+// 18. Create the getCalculationResult function
+// it should accept three arguments:
+// the first number
+// the second number
+// the calculation type
+// the calculation type should be a string that is either '+', '-', '*', or '/'
+// the function should return the result of the calculation based on the numbers and the type of the calculation
+// if the calculation type is not recognized, return null
+
+function getCalculationResult(firstNumber, secondNumber, calculationType) {
+    const result = eval(firstNumber + calculationType + secondNumber);
+    if (calculationType === '+' || calculationType === '-' || calculationType === '*' || calculationType === '/') {
+        return result;
+    }
+    return null;
+}
+
+console.log(getCalculationResult(3, 3, '%'));
+
+// 19. Implement the getPercentageValue function
+// it should accept two arguments:
+// the base number
+// the percentage
+// the function should return the percentage value based on the base number and the percentage.
+
+function getPercentageValue (baseNumber, percentageNumber) {
+    return percentageNumber * baseNumber / 100;
+}
+
+console.log(getPercentageValue(100, 10));
+
+// 20. Implement the getGreaterNumber function
+// it should accept two arguments:
+// the first number
+// the second number
+// the function should return the greater of two numbers
+
+function getGreaterNumber(firstNumber, secondNumber) {
+    if (firstNumber > secondNumber) {
+        return firstNumber;
+    } else {
+        return secondNumber;
+    }
+}
+
+console.log(getGreaterNumber(2, 5));
+
+// 21. Implement the isOddNumber function
+// it should accept one argument:
+// a number
+// the function should return true  if the number is odd, and false  if the number is not odd
+
+function isOddNumber(number) {
+    return number % 2 !== 0;
+}
+
+console.log(isOddNumber(6));
+
+// 22. Implement the isEvenNumber  function
+// it should accept one argument:
+// a number
+// the function should return true  if the number is even, and false  if the number is not even
+
+function isEvenNumber(number) {
+    return number % 2 === 0;
+}
+
+console.log(isEvenNumber(6));
+
+// 23. Implement the isDivisible function
+// it should accept two arguments:
+// the number to be divided
+// the number to divide by
+// the function should return true  if the dividend is divisible by the divisor, and false  otherwise
+
+function isDivisibleBy(dividend, divisor) {
+    return dividend % divisor === 0;
+}
+
+console.log(isDivisibleBy(10, 3));
+
+// 24. Implement the getSmallerNumber function
+// it should accept two arguments:
+// the first number
+// the second number
+// the function should return the smaller of two numbers
+
+function getSmallerNumber(firstNumber, secondNumber) {
+    if (firstNumber < secondNumber) {
+        return firstNumber;
+    } else {
+        return secondNumber;
+    }
+}
+
+console.log(getSmallerNumber(2, 1));
+
+// 25. Implement the isNumberPositive function
+// it should accept one argument:
+// a number
+// the function should return true  if the number is positive, and false  if the number is not positive
+
+function isNumberPositive(number) {
+    return number > 0;
+}
+
+console.log(isNumberPositive(1));
+
+// 26. Implement the getCelsiusConvertedToFahrenheit function
+// it should accept one argument:
+// a number
+// the function should return the number converted from Celsius to Fahrenheit
+
+function getCelsiusConvertedToFahrenheit(degreesCelsius) {
+    return degreesCelsius * 1.8 + 32;
+}
+
+console.log(getCelsiusConvertedToFahrenheit(36));
+
+// 27. Implement the getFahrenheitConvertedToCelsius function
+// it should accept one argument:
+// a number
+// the function should return the number converted from Fahrenheit to Celsius
+
+function getFahrenheitConvertedCelsius (degreesFahrenheit) {
+    return ((degreesFahrenheit - 32) * 5) / 9;
+}
+
+console.log(getFahrenheitConvertedCelsius(96.8));
+
+// 28. Implement the isLeapYear  function
+// it should accept one argument:
+// a number
+// the function should return true  if the number represents a leap year, and false otherwise
+
+function isLeapYear(year) {
+    return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+}
+
+console.log(isLeapYear(2003));
+
+// 29. Implement the getAverageOfThreeNumbers  function
+// it should accept three arguments:
+// the first number
+// the second number
+// the third number
+// the function should return the average of all provided numbers
+
+function getAverageOfThreeNumbers (firstNumber, secondNumber, thirdNumber) {
+    return (firstNumber + secondNumber + thirdNumber) / 3;
+}
+
+console.log(getAverageOfThreeNumbers(3, 4, 4));
+
+// 30. Implement the isNumberNegative function
+// it should accept one argument:
+// a number
+// the function should return true  if the number is negative, and false  if the number is not negative
+
+function isNumberNegative (number) {
+    return number < 0;
+}
+
+console.log(isNumberNegative(-5));
