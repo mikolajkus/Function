@@ -358,13 +358,13 @@ console.log(getCelsiusConvertedToFahrenheit(36));
 // a number
 // the function should return the number converted from Fahrenheit to Celsius
 
-function getFahrenheitConvertedCelsius (degreesFahrenheit) {
+function getFahrenheitConvertedToCelsius (degreesFahrenheit) {
     const adjustedDegrees = degreesFahrenheit - 32;
     const ratio = 5 / 9;
     return adjustedDegrees * ratio;
 }
 
-console.log(getFahrenheitConvertedCelsius(96.8));
+console.log(getFahrenheitConvertedToCelsius(96.8));
 
 // 28. Implement the isLeapYear  function
 // it should accept one argument:
