@@ -107,23 +107,23 @@ console.log(getOppositeNumber(-0.75));
 // 10. In this simple assignment you are given a number and have to make it negative.
 // But maybe the number is already negative?
 
-function makeNegative(number) {
+function getNegativeNumber(number) {
     if (number > 0) {
         return number * -1;
     }
 }
 
-console.log(makeNegative(5));
+console.log(getNegativeNumber(5));
 
 // 11. It's pretty straightforward.
 // Your goal is to create a function that removes the first and last characters of a string.
 // You're given one parameter, the original string. You don't have to worry about strings with less than two characters.
 
-function firstAndLastLetter(word) {
+function letDeleteLetter(word) {
     return word.slice(1,-1);
 }
 
-console.log(firstAndLastLetter("precisely"));
+console.log(letDeleteLetter('precisely'));
 
 // 12. Your task is to create a function that does four basic mathematical operations.
 // The function should take three arguments - operation(string/char), value1(number), value2(number).
@@ -188,7 +188,7 @@ console.log(areYouPlayingBanjo("Robert"));
 // if bmi <= 30.0 return "Overweight"
 // if bmi > 30 return "Obese"
 
-function BMI(weight, height) {
+function getBMI(weight, height) {
     const bmiValue = weight / (height * height);
     if (bmiValue <= 18.5) {
         return 'Underweight';
@@ -202,7 +202,7 @@ function BMI(weight, height) {
     return 'Obese';
 }
 
-console.log(BMI(80, 1.80));
+console.log(getBMI(80, 1.80));
 
 // 17. Write a rockPaperScissors  function that returns 1 if the first player won and 2 if the second player won.
 // In case of a draw, return 0.
@@ -358,7 +358,9 @@ console.log(getCelsiusConvertedToFahrenheit(36));
 // the function should return the number converted from Fahrenheit to Celsius
 
 function getFahrenheitConvertedCelsius (degreesFahrenheit) {
-    return (degreesFahrenheit - 32) * (5 / 9);
+    const fahrenheitSubtract32 = degreesFahrenheit - 32;
+    const fiveDivideNine = 5 / 9;
+    return fahrenheitSubtract32 * fiveDivideNine;
 }
 
 console.log(getFahrenheitConvertedCelsius(96.8));
