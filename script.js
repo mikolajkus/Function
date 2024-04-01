@@ -111,6 +111,7 @@ function getNegativeNumber(number) {
     if (number > 0) {
         return number * -1;
     }
+    return number;
 }
 
 console.log(getNegativeNumber(5));
@@ -119,11 +120,11 @@ console.log(getNegativeNumber(5));
 // Your goal is to create a function that removes the first and last characters of a string.
 // You're given one parameter, the original string. You don't have to worry about strings with less than two characters.
 
-function letDeleteLetter(word) {
-    return word.slice(1,-1);
+function letDeleteFirstAndLastLetter(word) {
+    return word.slice(1, -1);
 }
 
-console.log(letDeleteLetter('precisely'));
+console.log(letDeleteFirstAndLastLetter('precisely'));
 
 // 12. Your task is to create a function that does four basic mathematical operations.
 // The function should take three arguments - operation(string/char), value1(number), value2(number).
@@ -358,9 +359,9 @@ console.log(getCelsiusConvertedToFahrenheit(36));
 // the function should return the number converted from Fahrenheit to Celsius
 
 function getFahrenheitConvertedCelsius (degreesFahrenheit) {
-    const fahrenheitSubtract32 = degreesFahrenheit - 32;
-    const fiveDivideNine = 5 / 9;
-    return fahrenheitSubtract32 * fiveDivideNine;
+    const adjustedDegrees = degreesFahrenheit - 32;
+    const ratio = 5 / 9;
+    return adjustedDegrees * ratio;
 }
 
 console.log(getFahrenheitConvertedCelsius(96.8));
@@ -371,10 +372,10 @@ console.log(getFahrenheitConvertedCelsius(96.8));
 // the function should return true  if the number represents a leap year, and false otherwise
 
 function isLeapYear(year) {
-    const divisibleBy4 = year % 4 === 0;
-    const divisibleBy100 = year % 100 === 0;
-    const divisibleBy400 = year % 400 === 0;
-    return divisibleBy4 && divisibleBy100 || divisibleBy400;
+    const isDivisibleBy4 = year % 4 === 0;
+    const isDivisibleBy100 = year % 100 === 0;
+    const isDivisibleBy400 = year % 400 === 0;
+    return isDivisibleBy4 && isDivisibleBy100 || isDivisibleBy400;
 }
 
 console.log(isLeapYear(2000));
