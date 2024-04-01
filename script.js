@@ -130,7 +130,6 @@ console.log(firstAndLastLetter("precisely"));
 // The function should return result of numbers after applying the chosen operation.
 
 function basicMathOperation(operation, firstValue, secondValue) {
-    const result = firstValue + operation + secondValue;
     if (operation === '+') {
         return firstValue + secondValue;
     }
@@ -238,7 +237,6 @@ console.log(rockPaperScissors('rock', 'paper'));
 // if the calculation type is not recognized, return null
 
 function getCalculationResult(firstNumber, secondNumber, calculationType) {
-    const result = firstNumber + calculationType + secondNumber;
     if (calculationType === '+') {
         return firstNumber + secondNumber;
     }
