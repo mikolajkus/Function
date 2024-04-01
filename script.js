@@ -129,15 +129,23 @@ console.log(firstAndLastLetter("precisely"));
 // The function should take three arguments - operation(string/char), value1(number), value2(number).
 // The function should return result of numbers after applying the chosen operation.
 
-function calculatedValue(operation, firstValue, secondValue) {
+function basicMathOperation(operation, firstValue, secondValue) {
     const result = firstValue + operation + secondValue;
-    if (operation === '+' || operation === '-' || operation === '*' || operation === '/') {
-        return result;
+    if (operation === '+') {
+        return firstValue + secondValue;
     }
-    return null;
+    if (operation === '-') {
+        return firstValue - secondValue;
+    }
+    if (operation === '*') {
+        return firstValue * secondValue;
+    }
+    if (operation === '/') {
+        return firstValue / secondValue;
+    }
 }
 
-console.log(calculatedValue('*', 10, 2));
+console.log(basicMathOperation('*', 10, 2));
 
 // 13. The first century spans from the year 1 up to and including the year 100,
 // the second century - from the year 101 up to and including the year 200, etc.
@@ -185,9 +193,11 @@ function BMI(weight, height) {
     const bmiValue = weight / (height * height);
     if (bmiValue <= 18.5) {
         return 'Underweight';
-    } else if (bmiValue <= 25) {
+    }
+    if (bmiValue <= 25) {
         return 'Normal';
-    } else if (bmiValue <= 30) {
+    }
+    if (bmiValue <= 30) {
         return 'Overweight';
     }
     return 'Obese';
@@ -205,7 +215,8 @@ function rockPaperScissors(firstPlayer, secondPlayer) {
         (firstPlayer === 'scissors' && secondPlayer === 'paper')
     ) {
         return 1;
-    } else if (
+    }
+    if (
         (firstPlayer === 'rock' && secondPlayer === 'paper') ||
         (firstPlayer === 'scissors' && secondPlayer === 'rock') ||
         (firstPlayer === 'paper' && secondPlayer === 'scissors')
@@ -228,13 +239,22 @@ console.log(rockPaperScissors('rock', 'paper'));
 
 function getCalculationResult(firstNumber, secondNumber, calculationType) {
     const result = firstNumber + calculationType + secondNumber;
-    if (calculationType === '+' || calculationType === '-' || calculationType === '*' || calculationType === '/') {
-        return result;
+    if (calculationType === '+') {
+        return firstNumber + secondNumber;
+    }
+    if (calculationType === '-') {
+        return firstNumber - secondNumber;
+    }
+    if (calculationType === '*') {
+        return firstNumber * secondNumber;
+    }
+    if (calculationType === '/') {
+        return firstNumber / secondNumber;
     }
     return null;
 }
 
-console.log(getCalculationResult(3, 3, '%'));
+console.log(getCalculationResult(3, 3, '*'));
 
 // 19. Implement the getPercentageValue function
 // it should accept two arguments:
@@ -242,7 +262,7 @@ console.log(getCalculationResult(3, 3, '%'));
 // the percentage
 // the function should return the percentage value based on the base number and the percentage.
 
-function getPercentageValue (baseNumber, percentageNumber) {
+function getPercentageValue(baseNumber, percentageNumber) {
     return percentageNumber * baseNumber / 100;
 }
 
@@ -340,7 +360,7 @@ console.log(getCelsiusConvertedToFahrenheit(36));
 // the function should return the number converted from Fahrenheit to Celsius
 
 function getFahrenheitConvertedCelsius (degreesFahrenheit) {
-    return (degreesFahrenheit - 32) * 5 / 9;
+    return (degreesFahrenheit - 32) * (5 / 9);
 }
 
 console.log(getFahrenheitConvertedCelsius(96.8));
@@ -352,12 +372,12 @@ console.log(getFahrenheitConvertedCelsius(96.8));
 
 function isLeapYear(year) {
     const divisibleBy4 = year % 4 === 0;
-    const divisibleBy100 = year % 100 !== 0;
+    const divisibleBy100 = year % 100 === 0;
     const divisibleBy400 = year % 400 === 0;
     return divisibleBy4 && divisibleBy100 || divisibleBy400;
 }
 
-console.log(isLeapYear(2003));
+console.log(isLeapYear(2000));
 
 // 29. Implement the getAverageOfThreeNumbers  function
 // it should accept three arguments:
